@@ -1,0 +1,6 @@
+{
+  "name": "MechMate AI",
+  "description": "MechMate AI — Industrial Machine Intelligence & Predictive Maintenance for rotating machinery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
