@@ -20,6 +20,10 @@ let initialized: Promise<void> | null = null;
 let wireLog: McpWireEntry[] = [];
 
 export const getWireLog = () => wireLog;
+/** Forget the MCP session so the next call performs a fresh `initialize` handshake. */
+export const resetMcpSession = () => {
+  initialized = null;
+};
 export const clearWireLog = () => {
   wireLog = [];
 };

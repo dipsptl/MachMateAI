@@ -228,3 +228,10 @@ npm run lint
 - **Unified Core Architecture**: Single source of truth for telemetry, diagnostics, and multi-channel actions.
 - **Physics-First AI**: Explains mechanical failure modes with physical equations and sensor correlations, not just unverified probability percentages.
 - **Zero Hardcoded Credentials**: Configurable via `.env.example` with clear distinction between simulated development and live production modes.
+
+## Narrated demo mode (for the demo video)
+
+Open `http://localhost:3000/?mode=demo`, pick a voice, press **Start demo**, and screen-record the window.
+The tour narrates each scene with the browser's speech engine (best in Microsoft Edge with an "Aria" or "Jenny" Natural voice),
+calls the real MCP server at `/api/mcp`, triggers a real Ring event and shows the resulting Bee alert.
+The MCP Inspector scene plays a screen recording from `public/demo/`. Press `Esc` to stop.
