@@ -1,9 +1,24 @@
 # MechMate AI — Industrial Machine Maintenance & Engineering Intelligence Platform
 
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://machmateai.onrender.com)
+[![YouTube Demo](https://img.shields.io/badge/Watch-YouTube-red?logo=youtube)](https://youtu.be/DFbDYiZ46EM?si=vRpDAMw-rpmaI3LA)
+
 > **Tagline:** AI Engineering Intelligence for Industrial Machinery Maintenance & Predictive Reliability  
 > **Core Paradigm:** `Observe → Understand → Reason → Simulate → Recommend → Explain`
 
-MechMate AI is an advanced, AI-powered industrial machine maintenance platform designed for rotating machinery (gearboxes, electric induction motors, slurry pumps, centrifugal compressors, and turbines). 
+## 🔗 Project Links
+
+| | Link |
+| :--- | :--- |
+| 🚀 **Live Deployed App** | [MechMate AI – Live App](https://machmateai.onrender.com) |
+| 🎬 **Demo Video (YouTube)** | [Watch the Demo on YouTube](https://youtu.be/DFbDYiZ46EM?si=vRpDAMw-rpmaI3LA) |
+| 📺 **Fire TV Mode** | [Open Fire TV View](https://machmateai.onrender.com/?mode=firetv) |
+| 🌐 **Amazon Hub** | [Open Amazon Hub](https://machmateai.onrender.com/?tab=amazon) |
+| 🔌 **MCP Server** | [/api/mcp](https://machmateai.onrender.com/api/mcp) |
+
+---
+
+MechMate AI is an advanced, AI-powered industrial machine maintenance platform designed for rotating machinery (gearboxes, electric induction motors, slurry pumps, centrifugal compressors, and turbines).
 
 The platform combines real-time multi-sensor telemetry, physics-informed mechanical calculations, 3D parametric digital twins, what-if operational simulations, and an intelligent root-cause reasoning engine.
 
@@ -175,13 +190,13 @@ npm install
 
 # 2. Start the unified MechMate server (Backend Express + Frontend Vite on port 3000)
 npm run dev
-
-# 3. Open in your browser:
-# Main Workstation:  http://localhost:3000
-# Fire TV Mode:      http://localhost:3000/?mode=firetv
-# Amazon Hub:        http://localhost:3000/?tab=amazon
-# MCP Server:        http://localhost:3000/api/mcp
 ```
+
+### Local URLs (after `npm run dev`):
+- Main Workstation: `http://localhost:3000`
+- Fire TV Mode: `http://localhost:3000/?mode=firetv`
+- Amazon Hub: `http://localhost:3000/?tab=amazon`
+- MCP Server: `http://localhost:3000/api/mcp`
 
 ### Type Checking & Linting:
 ```bash
@@ -192,9 +207,11 @@ npm run lint
 
 ## 6. How to Test Each Channel
 
+> You can test on the [live deployed app](https://machmateai.onrender.com) or locally at `http://localhost:3000`.
+
 ### 1. Test Fire TV Control Room:
-- Open `http://localhost:3000` and click the **Amazon Hub** button on the top pill bar.
-- Click **1. Fire TV** or visit `http://localhost:3000/?mode=firetv`.
+- Open the app and click the **Amazon Hub** button on the top pill bar.
+- Click **1. Fire TV** or visit [`/?mode=firetv`](https://machmateai.onrender.com/?mode=firetv).
 - Press your keyboard's **Arrow keys (◀ ▲ ▼ ▶)** to navigate between machines. Press **Enter/OK** to inspect.
 - Click the **Alarm Beacon** button to test the audio alarm chime.
 
@@ -205,10 +222,11 @@ npm run lint
 - Switch to **MCP Tool Inspector (7 Tools)**: Select `get_high_risk_machines` and click **Execute MCP Tool**.
 - Test external MCP query via curl:
   ```bash
-  curl -X POST http://localhost:3000/api/mcp \
+  curl -X POST https://machmateai.onrender.com/api/mcp \
     -H "Content-Type: application/json" \
     -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"get_machine_status","arguments":{"machineId":"GT-204"}}}'
   ```
+  (For local testing, replace the URL with `http://localhost:3000/api/mcp`.)
 
 ### 3. Test Bee Wearable:
 - On the Amazon Hub, click **3. Bee Wearable**.
@@ -229,9 +247,13 @@ npm run lint
 - **Physics-First AI**: Explains mechanical failure modes with physical equations and sensor correlations, not just unverified probability percentages.
 - **Zero Hardcoded Credentials**: Configurable via `.env.example` with clear distinction between simulated development and live production modes.
 
-## Narrated demo mode (for the demo video)
+---
 
-Open `https://youtu.be/DFbDYiZ46EM?si=vRpDAMw-rpmaI3LA`, pick a voice, press **Start demo**, and screen-record the window.
+## 8. Narrated Demo Mode (for the demo video)
+
+🎬 **Watch the finished demo:** [MechMate AI Demo on YouTube](https://youtu.be/DFbDYiZ46EM?si=vRpDAMw-rpmaI3LA)
+
+To record your own: open the [live app](https://machmateai.onrender.com), pick a voice, press **Start demo**, and screen-record the window.
 The tour narrates each scene with the browser's speech engine (best in Microsoft Edge with an "Aria" or "Jenny" Natural voice),
 calls the real MCP server at `/api/mcp`, triggers a real Ring event and shows the resulting Bee alert.
 The MCP Inspector scene plays a screen recording from `public/demo/`. Press `Esc` to stop.
